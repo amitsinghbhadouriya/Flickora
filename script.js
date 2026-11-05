@@ -250,19 +250,10 @@ document.addEventListener('DOMContentLoaded', () => {
            FEATURE 6: LOADING ANIMATIONS (Initial page loader & button loaders)
            ========================================================================== */
         const pageLoader = document.getElementById('page-loader');
-
-            // Hide page loader smoothly
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    if (pageLoader) pageLoader.classList.add('loaded');
-                }, 400);
-            });
-            // Fallback if load is delayed
-            setTimeout(() => {
-                if (pageLoader && !pageLoader.classList.contains('loaded')) {
-                    pageLoader.classList.add('loaded');
-                }
-            }, 1500);
+        if (pageLoader) {
+            pageLoader.classList.add('loaded');
+            pageLoader.style.display = 'none';
+        }
 
 
             /* ==========================================================================
@@ -647,8 +638,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (lastUpdatedDateEl) lastUpdatedDateEl.textContent = formattedDate;
             if (footerUpdatedDateEl) footerUpdatedDateEl.textContent = formattedDate;
+
+            // 9. Fix copyright year dynamically
+            const currentYear = now.getFullYear();
+            document.querySelectorAll('.copyright-year').forEach(el => {
+                el.textContent = currentYear;
+            });
         }
         setLastUpdatedDates();
+
+        // 15. Nav category filter triggers
+        document.querySelectorAll('[data-nav-filter]').forEach(link => {
+            link.addEventListener('click', () => {
+                const filter = link.getAttribute('data-nav-filter');
+                const targetFilterBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+                if (targetFilterBtn) {
+                    targetFilterBtn.click();
+                }
+            });
+        });
 
 
         /* ==========================================================================
@@ -760,8 +768,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextDom = document.getElementById('next');
         const prevDom = document.getElementById('prev');
         const carouselDom = document.querySelector('.carousel');
-        const SliderDom = carouselDom ? carouselDom.querySelector('.carousel .list') : null;
-        const thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+        const SliderDom = carouselDom ? carouselDom.querySelector('.list') : null;
+        const thumbnailBorderDom = carouselDom ? carouselDom.querySelector('.thumbnail') : null;
 
         let timeRunning = 2000;
         let runTimeOut;
@@ -775,8 +783,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function showSlider(type) {
             if (!carouselDom || !SliderDom || !thumbnailBorderDom) return;
-            const SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
-            const thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
+            const SliderItemsDom = SliderDom.querySelectorAll('.item');
+            const thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+            if (SliderItemsDom.length === 0 || thumbnailItemsDom.length === 0) return;
 
             if (type === 'next') {
                 SliderDom.appendChild(SliderItemsDom[0]);

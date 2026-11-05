@@ -3,55 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLICKORA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Flickora - Stream Movies, Anime &amp; TV Series in HD</title>
+    <meta name="description" content="Stream the latest blockbuster movies, trending anime series, and exclusive TV shows on Flickora in 4K Ultra HD. Download for offline viewing anytime.">
+    <meta property="og:title" content="Flickora - Stream Movies, Anime &amp; TV Series in HD">
+    <meta property="og:description" content="Watch Squid Game, One Piece, Shogun, Demon Slayer, Game of Thrones, and Jujutsu Kaisen on Flickora.">
+    <meta property="og:image" content="image/1.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- 12. Skip to content -->
+    <!-- Skip to content -->
     <a href="#main-content" class="skip-to-content">Skip to content</a>
 
-    <!-- 8. Scroll progress bar -->
-    <div id="scroll-progress"></div>
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" aria-hidden="true"></div>
 
-    <!-- 6. Loading animations: Page loader -->
-    <div id="page-loader">
-        <div class="loader-logo"><span style="color: #1cc6e0;">FLICK</span>ORA</div>
-        <div class="loader-bar"></div>
-    </div>
-
-    <!-- 10. Print stylesheet: Print header -->
-    <div class="print-header">
+    <!-- Print stylesheet: Print header -->
+    <div class="print-header" aria-hidden="true">
         <h1>FLICKORA</h1>
-        <p>Streaming Catalogue &amp; Guide</p>
+        <p>Premium Streaming Catalogue &amp; Entertainment Guide</p>
     </div>
 
-    <!-- 11. Sticky Header (Preserving original structure) -->
+    <!-- Sticky Header & Clickable Logo -->
     <header data-aos="fade-down" data-aos-duration="2000">
-        <h1><span style="color: #1cc6e0;">FLICK</span>ORA</h1>
+        <h1><a href="#home" class="logo-link"><span style="color: #1cc6e0;">FLICK</span>ORA</a></h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="#catalogue">Movie</a>
-            <a href="#catalogue">Anime</a>
-            <a href="#catalogue">series</a>
+            <a href="#home">Home</a>
+            <a href="#catalogue" data-nav-filter="all">Movie</a>
+            <a href="#catalogue" data-nav-filter="anime">Anime</a>
+            <a href="#catalogue" data-nav-filter="series">series</a>
         </nav>
 
         <div class="search-box">
-            <!-- 3. Site Search -->
             <img src="image/search.png" alt="search-icon">
-            <input type="text" name="Search" placeholder="search" class="site-search-input">
+            <input type="text" name="Search" placeholder="search" class="site-search-input" aria-label="Search titles">
             <button type="button" class="search-clear-btn" aria-label="Clear search">&times;</button>
-            <div id="search-dropdown" class="search-results-dropdown"></div>
+            <div id="search-dropdown" class="search-results-dropdown" role="listbox"></div>
 
-            <!-- 1. Dark Mode Toggle -->
             <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle theme">
                 <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>
                 <svg class="moon-icon" viewBox="0 0 24 24"><path d="M12.3 2a10 10 0 0 0-.19 14 9.92 9.92 0 0 0 7.9 3.11 1 1 0 0 0 .8-1.58 10 10 0 1 1-8.51-15.53z"/></svg>
             </button>
 
-            <!-- 5. Mobile Menu Button -->
-            <button type="button" id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">
+            <button type="button" id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -59,24 +56,29 @@
         </div>
     </header>
 
-    <!-- 5. Mobile Menu Drawer -->
-    <div id="mobile-backdrop" class="mobile-drawer-backdrop"></div>
-    <div id="mobile-drawer" class="mobile-drawer">
+    <!-- Mobile Menu Drawer & Backdrop -->
+    <div id="mobile-backdrop" class="mobile-drawer-backdrop" aria-hidden="true"></div>
+    <div id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
         <nav>
-            <a href="#">Home</a>
-            <a href="#catalogue">Movie</a>
-            <a href="#catalogue">Anime</a>
-            <a href="#catalogue">series</a>
+            <a href="#home">Home</a>
+            <a href="#catalogue" data-nav-filter="all">Movie</a>
+            <a href="#catalogue" data-nav-filter="anime">Anime</a>
+            <a href="#catalogue" data-nav-filter="series">Series</a>
             <a href="#vip">VIP Pass</a>
             <a href="#faq">FAQ</a>
+            <a href="#contact">Contact Support</a>
         </nav>
+        <div style="margin-top: 25px; font-size: 11px; color: #888;">
+            <p>Support: <a href="tel:+18005553542" class="phone-link">+1 (800) 555-FLICK</a></p>
+        </div>
     </div>
 
-    <!-- ORIGINAL CAROUSEL (100% PRESERVED) -->
-    <div class="carousel">
+    <!-- ORIGINAL HERO CAROUSEL -->
+    <div class="carousel" id="home">
         <div class="list">
+            <!-- 1. Squid Game -->
             <div class="item">
-                <img src="image/1.png">
+                <img src="image/1.png" alt="Squid Game">
                 <div class="content">
                     <h1>Squid Game</h1>
                     <div class="details">
@@ -88,19 +90,19 @@
                     <h4>Survive or Die: The Deadly Games Begin</h4>
 
                     <div class="buttons">
-                        <!-- 17. Confirmation modal trigger on download -->
                         <button class="download-btn" data-title="Squid Game">Download</button>
                         <button class="trailer-btn">Trailer</button>
-                        <!-- 9. Copy button -->
-                        <button class="copy-btn" data-copy-url="https://flickora.stream/squid-game">Share</button>
+                        <button class="copy-btn" data-copy-url="https://flickora.stream/title/squid-game">Share</button>
                     </div>
                     <div class="vid-box">
                         <video src="video/squid game.mp4" type="video/mp4" controls class="vid-trailer"></video>
                     </div>
                 </div>
             </div>
+
+            <!-- 2. One Piece -->
             <div class="item">
-                <img src="image/2.png">
+                <img src="image/2.png" alt="One Piece">
                 <div class="content">
                     <h1>One Piece</h1>
                     <div class="details">
@@ -109,20 +111,22 @@
                         <p>1000+ EP</p>
                         <p>Action</p>
                     </div>
-                    <h4>Set Sall with Luffy on the Quest for the One Piece</h4>
+                    <h4>Set Sail with Luffy on the Quest for the One Piece</h4>
 
                     <div class="buttons">
                         <button class="download-btn" data-title="One Piece">Download</button>
                         <button class="trailer-btn">Trailer</button>
-                        <button class="copy-btn" data-copy-url="https://flickora.stream/one-piece">Share</button>
+                        <button class="copy-btn" data-copy-url="https://flickora.stream/title/one-piece">Share</button>
                     </div>
                     <div class="vid-box">
                         <video controls id="vid" class="vid-trailer" src="video/one_piece.mp4" type="video/mp4"></video>
                     </div>
                 </div>
             </div>
+
+            <!-- 3. Shogun -->
             <div class="item">
-                <img src="image/3.png">
+                <img src="image/3.png" alt="Shogun">
                 <div class="content">
                     <h1>Shogun</h1>
                     <div class="details">
@@ -136,15 +140,17 @@
                     <div class="buttons">
                         <button class="download-btn" data-title="Shogun">Download</button>
                         <button class="trailer-btn">Trailer</button>
-                        <button class="copy-btn" data-copy-url="https://flickora.stream/shogun">Share</button>
+                        <button class="copy-btn" data-copy-url="https://flickora.stream/title/shogun">Share</button>
                     </div>
                     <div class="vid-box">
-                        <video controls id="vid" class="vid-trailer" src="video/shogun.mp4" type="video/mp4"></video>
+                        <video controls id="vid-shogun" class="vid-trailer" src="video/shogun.mp4" type="video/mp4"></video>
                     </div>
                 </div>
             </div>
+
+            <!-- 4. Demon Slayer -->
             <div class="item">
-                <img src="image/4.png">
+                <img src="image/4.png" alt="Demon Slayer">
                 <div class="content">
                     <h1>Demon Slayer</h1>
                     <div class="details">
@@ -158,17 +164,17 @@
                     <div class="buttons">
                         <button class="download-btn" data-title="Demon Slayer">Download</button>
                         <button class="trailer-btn">Trailer</button>
-                        <button class="copy-btn" data-copy-url="https://flickora.stream/demon-slayer">Share</button>
+                        <button class="copy-btn" data-copy-url="https://flickora.stream/title/demon-slayer">Share</button>
                     </div>
                     <div class="vid-box">
-                        <video controls id="vid" class="vid-trailer" src="video/Demon slayer.mp4"
-                            type="video/mp4"></video>
+                        <video controls id="vid-demon" class="vid-trailer" src="video/Demon slayer.mp4" type="video/mp4"></video>
                     </div>
                 </div>
             </div>
 
+            <!-- 5. Game of Thrones -->
             <div class="item">
-                <img src="image/5.png">
+                <img src="image/5.png" alt="Game of Thrones">
                 <div class="content">
                     <h1>Game of Thrones</h1>
                     <div class="details">
@@ -182,17 +188,17 @@
                     <div class="buttons">
                         <button class="download-btn" data-title="Game of Thrones">Download</button>
                         <button class="trailer-btn">Trailer</button>
-                        <button class="copy-btn" data-copy-url="https://flickora.stream/game-of-thrones">Share</button>
+                        <button class="copy-btn" data-copy-url="https://flickora.stream/title/game-of-thrones">Share</button>
                     </div>
                     <div class="vid-box">
-                        <video controls id="vid" class="vid-trailer" src="video/game of thrones.mp4"
-                            type="video/mp4"></video>
+                        <video controls id="vid-got" class="vid-trailer" src="video/game of thrones.mp4" type="video/mp4"></video>
                     </div>
                 </div>
             </div>
 
+            <!-- 6. Jujutsu Kaisen -->
             <div class="item">
-                <img src="image/6.png">
+                <img src="image/6.png" alt="Jujutsu Kaisen">
                 <div class="content">
                     <h1>Jujutsu Kaisen</h1>
                     <div class="details">
@@ -206,11 +212,10 @@
                     <div class="buttons">
                         <button class="download-btn" data-title="Jujutsu Kaisen">Download</button>
                         <button class="trailer-btn">Trailer</button>
-                        <button class="copy-btn" data-copy-url="https://flickora.stream/jujutsu-kaisen">Share</button>
+                        <button class="copy-btn" data-copy-url="https://flickora.stream/title/jujutsu-kaisen">Share</button>
                     </div>
                     <div class="vid-box">
-                        <video controls id="vid" class="vid-trailer" src="video/jujutsu kaisen.mp4"
-                            type="video/mp4"></video>
+                        <video controls id="vid-jjk" class="vid-trailer" src="video/jujutsu kaisen.mp4" type="video/mp4"></video>
                     </div>
                 </div>
             </div>
@@ -218,92 +223,64 @@
 
         <div class="thumbnail">
             <div class="item">
-                <img src="image/1.png">
+                <img src="image/1.png" alt="Squid Game thumbnail">
                 <div class="thum-content">
-                    <div class="title">
-                        Squid Game
-                    </div>
-                    <div class="description">
-                        Survive or Die: The Deadly Games Begin
-                    </div>
+                    <div class="title">Squid Game</div>
+                    <div class="description">Survive or Die: The Deadly Games Begin</div>
                 </div>
             </div>
             <div class="item">
-                <img src="image/2.png">
+                <img src="image/2.png" alt="One Piece thumbnail">
                 <div class="thum-content">
-                    <div class="title">
-                        One Piece
-                    </div>
-                    <div class="description">
-                        Set Sail with Luffy on the Quest for the One Piece
-                    </div>
+                    <div class="title">One Piece</div>
+                    <div class="description">Set Sail with Luffy on the Quest for the One Piece</div>
                 </div>
             </div>
             <div class="item">
-                <img src="image/3.png">
+                <img src="image/3.png" alt="Shogun thumbnail">
                 <div class="thum-content">
-                    <div class="title">
-                        Shogun
-                    </div>
-                    <div class="description">
-                        Honor, Power, and Betrayal in Feudal Japan
-                    </div>
+                    <div class="title">Shogun</div>
+                    <div class="description">Honor, Power, and Betrayal in Feudal Japan</div>
                 </div>
             </div>
             <div class="item">
-                <img src="image/4.png">
+                <img src="image/4.png" alt="Demon Slayer thumbnail">
                 <div class="thum-content">
-                    <div class="title">
-                        Demon Slayer
-                    </div>
-                    <div class="description">
-                        Blades Clash and Demons Fall in a Battle for Humanity
-                    </div>
+                    <div class="title">Demon Slayer</div>
+                    <div class="description">Blades Clash and Demons Fall in a Battle for Humanity</div>
                 </div>
             </div>
             <div class="item">
-                <img src="image/5.png">
+                <img src="image/5.png" alt="Game of Thrones thumbnail">
                 <div class="thum-content">
-                    <div class="title">
-                        Game of Thrones
-                    </div>
-                    <div class="description">
-                        Power, Betrayal, and the Fight for the Iron Throne
-                    </div>
+                    <div class="title">Game of Thrones</div>
+                    <div class="description">Power, Betrayal, and the Fight for the Iron Throne</div>
                 </div>
             </div>
             <div class="item">
-                <img src="image/6.png">
+                <img src="image/6.png" alt="Jujutsu Kaisen thumbnail">
                 <div class="thum-content">
-                    <div class="title">
-                        Jujutsu Kaisen
-                    </div>
-                    <div class="description">
-                        Curses Rise, Sorcerers Fight, and Destiny Unfolds
-                    </div>
+                    <div class="title">Jujutsu Kaisen</div>
+                    <div class="description">Curses Rise, Sorcerers Fight, and Destiny Unfolds</div>
                 </div>
             </div>
         </div>
 
         <div class="arrows">
-            <button id="prev">
-                &lt; 
-            </button>
-            <button id="next">
-                &gt;
-            </button>
+            <button id="prev" aria-label="Previous slide">&lt;</button>
+            <button id="next" aria-label="Next slide">&gt;</button>
         </div>
 
         <div class="time"></div>
     </div>
 
-    <!-- MAIN CONTENT AREA FOR THE 20 FEATURES -->
+    <!-- MAIN CONTENT AREA -->
     <main id="main-content">
         <div class="container">
-            <!-- 14. UTM Tracking Banner -->
+            <!-- UTM Tracking Campaign Banner -->
             <div id="utm-banner" class="utm-banner">
                 <div>
-                    <span>🚀 <strong>Special Offer:</strong> Campaign active: <span id="utm-campaign-name">VIP Special</span>.</span>
+                    <span>🚀 <strong>Special Promotion:</strong> Welcome! Your VIP promotion is active: <span id="utm-campaign-name">VIP Stream Pass</span>.</span>
                 </div>
                 <button type="button" id="utm-close-btn" class="utm-close-btn" aria-label="Close banner">&times;</button>
             </div>
@@ -316,21 +293,18 @@
                         <p>Stream in 4K Ultra HD or download for offline viewing.</p>
                     </div>
 
-                    <!-- 18. Last Updated Date Badge -->
                     <div class="last-updated-badge">
                         <span class="pulse-dot"></span>
                         <span>Catalogue updated: <strong id="last-updated-date">Today</strong></span>
                     </div>
                 </div>
 
-                <!-- Filter Tabs -->
                 <div class="filter-tabs">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="series">Series</button>
+                    <button class="filter-btn active" data-filter="all">All Titles</button>
+                    <button class="filter-btn" data-filter="series">TV Series</button>
                     <button class="filter-btn" data-filter="anime">Anime</button>
                 </div>
 
-                <!-- 7. Hover states on cards -->
                 <div class="catalogue-grid">
                     <div class="media-card" data-category="series">
                         <div class="card-img-wrap">
@@ -340,10 +314,10 @@
                         <div class="card-content">
                             <h3>Squid Game</h3>
                             <div class="card-meta">2021 • 2 Seasons • Drama</div>
-                            <p class="card-desc">Contestants compete in deadly children's games for a massive cash prize.</p>
+                            <p class="card-desc">Contestants compete in deadly survival games for a life-changing cash prize.</p>
                             <div class="card-actions">
                                 <button class="card-btn primary card-download-btn" data-title="Squid Game">Download</button>
-                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/squid-game">Share</button>
+                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/title/squid-game">Share</button>
                             </div>
                         </div>
                     </div>
@@ -356,10 +330,10 @@
                         <div class="card-content">
                             <h3>One Piece</h3>
                             <div class="card-meta">1999 • 1000+ EP • Action</div>
-                            <p class="card-desc">Monkey D. Luffy embarks on the quest to find the legendary One Piece treasure.</p>
+                            <p class="card-desc">Monkey D. Luffy embarks on the high seas to discover the legendary One Piece treasure.</p>
                             <div class="card-actions">
                                 <button class="card-btn primary card-download-btn" data-title="One Piece">Download</button>
-                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/one-piece">Share</button>
+                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/title/one-piece">Share</button>
                             </div>
                         </div>
                     </div>
@@ -372,10 +346,10 @@
                         <div class="card-content">
                             <h3>Shogun</h3>
                             <div class="card-meta">2021 • 1 Season • Drama</div>
-                            <p class="card-desc">Honor, power, and betrayal in feudal Japan as samurai lords clash.</p>
+                            <p class="card-desc">Honor, power, and political betrayal in feudal Japan as samurai lords clash.</p>
                             <div class="card-actions">
                                 <button class="card-btn primary card-download-btn" data-title="Shogun">Download</button>
-                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/shogun">Share</button>
+                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/title/shogun">Share</button>
                             </div>
                         </div>
                     </div>
@@ -388,10 +362,10 @@
                         <div class="card-content">
                             <h3>Demon Slayer</h3>
                             <div class="card-meta">2019 • 4 Seasons • Action</div>
-                            <p class="card-desc">Tanjiro fights demons to save humanity and cure his sister Nezuko.</p>
+                            <p class="card-desc">Tanjiro fights demons across Japan to cure his sister Nezuko and avenge his family.</p>
                             <div class="card-actions">
                                 <button class="card-btn primary card-download-btn" data-title="Demon Slayer">Download</button>
-                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/demon-slayer">Share</button>
+                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/title/demon-slayer">Share</button>
                             </div>
                         </div>
                     </div>
@@ -404,10 +378,10 @@
                         <div class="card-content">
                             <h3>Game of Thrones</h3>
                             <div class="card-meta">2011 • 6 Seasons • Drama</div>
-                            <p class="card-desc">Noble families battle for the Iron Throne of the Seven Kingdoms.</p>
+                            <p class="card-desc">Noble houses battle relentlessly for control of the Iron Throne of Westeros.</p>
                             <div class="card-actions">
                                 <button class="card-btn primary card-download-btn" data-title="Game of Thrones">Download</button>
-                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/game-of-thrones">Share</button>
+                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/title/game-of-thrones">Share</button>
                             </div>
                         </div>
                     </div>
@@ -420,26 +394,26 @@
                         <div class="card-content">
                             <h3>Jujutsu Kaisen</h3>
                             <div class="card-meta">2020 • 2 Seasons • Action</div>
-                            <p class="card-desc">Sorcerers battle cursed spirits in modern-day supernatural Japan.</p>
+                            <p class="card-desc">High school sorcerers fight ancient cursed spirits threatening modern Tokyo.</p>
                             <div class="card-actions">
                                 <button class="card-btn primary card-download-btn" data-title="Jujutsu Kaisen">Download</button>
-                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/jujutsu-kaisen">Share</button>
+                                <button class="card-btn secondary copy-link-btn" data-copy-url="https://flickora.stream/title/jujutsu-kaisen">Share</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 13, 15, 16. VIP Membership Form (Password visibility, errors, success) -->
+            <!-- VIP Membership Form Section -->
             <section id="vip" class="vip-section">
                 <div class="vip-grid">
                     <div class="vip-intro">
                         <h2>Unlock <span>VIP Access</span></h2>
-                        <p>Get early access to episodes, 4K streaming, and unlimited offline downloads.</p>
+                        <p>Enjoy ad-free streaming in 4K HDR, early access to season premieres, and unlimited offline downloads.</p>
                         <ul class="vip-perks">
                             <li>
                                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <span>Ad-free ultra HD streaming</span>
+                                <span>Ad-free ultra HD 4K streaming</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -450,100 +424,95 @@
 
                     <div class="vip-form-box">
                         <form id="vip-form" novalidate>
-                            <!-- 14. UTM Tracking hidden inputs -->
                             <input type="hidden" name="utm_source" value="">
                             <input type="hidden" name="utm_medium" value="">
                             <input type="hidden" name="utm_campaign" value="">
 
-                            <!-- 16. Form error state on name -->
                             <div class="form-group">
-                                <label for="vip-name">Name</label>
+                                <label for="vip-name">Full Name</label>
                                 <div class="form-control-wrap">
-                                    <input type="text" id="vip-name" name="name" class="form-input" placeholder="Your Name" required>
+                                    <input type="text" id="vip-name" name="name" class="form-input" placeholder="Enter your full name" required>
                                 </div>
-                                <span class="form-error-msg">Please enter your name</span>
+                                <span class="form-error-msg">Please enter your full name</span>
                             </div>
 
-                            <!-- 16. Form error state on email -->
                             <div class="form-group">
-                                <label for="vip-email">Email</label>
+                                <label for="vip-email">Email Address</label>
                                 <div class="form-control-wrap">
-                                    <input type="email" id="vip-email" name="email" class="form-input" placeholder="name@email.com" required>
+                                    <input type="email" id="vip-email" name="email" class="form-input" placeholder="Enter your email address" required>
                                 </div>
-                                <span class="form-error-msg">Please enter a valid email</span>
+                                <span class="form-error-msg">Please enter a valid email address</span>
                             </div>
 
-                            <!-- 13. Password visibility toggle -->
                             <div class="form-group">
-                                <label for="vip-password">Password</label>
+                                <label for="vip-password">Account Password</label>
                                 <div class="form-control-wrap">
-                                    <input type="password" id="vip-password" name="password" class="form-input" placeholder="At least 6 characters" required>
-                                    <button type="button" class="password-toggle-btn" aria-label="Toggle password">
+                                    <input type="password" id="vip-password" name="password" class="form-input" placeholder="Choose a password (min. 6 characters)" required>
+                                    <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
                                         <svg class="eye-icon" viewBox="0 0 24 24">
                                             <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
                                         </svg>
                                         <svg class="eye-off-icon" viewBox="0 0 24 24" style="display: none;">
-                                            <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.44-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27z"/>
+                                            <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.44-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
                                         </svg>
                                     </button>
                                 </div>
                                 <span class="form-error-msg">Password must be at least 6 characters</span>
                             </div>
 
-                            <!-- 6. Loading animation on submit -->
                             <button type="submit" class="submit-btn">
-                                <span class="spinner"></span>
-                                <span>Get VIP Pass</span>
+                                <span class="spinner" aria-hidden="true"></span>
+                                <span>Activate VIP Membership</span>
                             </button>
                         </form>
 
-                        <!-- 15. Form success state -->
-                        <div id="form-success-card" class="form-success-card">
+                        <div id="form-success-card" class="form-success-card" role="status" aria-live="polite">
                             <div class="success-icon-wrap">
                                 <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
                             </div>
-                            <h3>VIP Activated!</h3>
-                            <p>Welcome, <strong id="success-user-name">Member</strong>! Enjoy your VIP streaming pass.</p>
-                            <button type="button" id="reset-form-btn" class="card-btn primary" style="margin: 0 auto; display: block;">Reset</button>
+                            <h3>VIP Access Activated!</h3>
+                            <p>Welcome aboard, <strong id="success-user-name">Friend</strong>! Your complimentary 30-day VIP pass is active.</p>
+                            <button type="button" id="reset-form-btn" class="card-btn primary" style="margin: 0 auto; display: block;">Sign Up Another Account</button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 19. Expandable FAQ Accordion -->
+            <!-- Expandable FAQ Section -->
             <section id="faq" class="faq-section">
                 <div class="section-title-wrap" style="text-align: center; margin-bottom: 25px;">
                     <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about streaming, playback, and downloads.</p>
                 </div>
 
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-1">
                             <span>Is Flickora free to stream?</span>
                             <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
                         </button>
-                        <div class="faq-answer">
-                            <p>Yes, Flickora provides free streaming for all standard catalog titles.</p>
+                        <div id="faq-ans-1" class="faq-answer">
+                            <p>Yes, Flickora provides free streaming for all standard catalog titles with adaptive resolution.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>How do downloads work?</span>
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-2">
+                            <span>How do offline movie downloads work?</span>
                             <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
                         </button>
-                        <div class="faq-answer">
-                            <p>Click any Download button to open a confirmation dialog, then save the MP4 video file to your device.</p>
+                        <div id="faq-ans-2" class="faq-answer">
+                            <p>Click any Download button to open a confirmation dialog, then save the MP4 video directly to your device for offline viewing without buffering.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-3">
                             <span>What video qualities are available?</span>
                             <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
                         </button>
-                        <div class="faq-answer">
-                            <p>Titles are available from 720p HD up to 4K Ultra HD with multiple subtitle options.</p>
+                        <div id="faq-ans-3" class="faq-answer">
+                            <p>Titles are available from 720p HD up to 4K Ultra HD with multiple subtitle and audio language options.</p>
                         </div>
                     </div>
                 </div>
@@ -551,31 +520,36 @@
         </div>
     </main>
 
-    <!-- FOOTER WITH 18. Last Updated Date -->
-    <footer>
+    <!-- FOOTER -->
+    <footer id="contact">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h2><span style="color: #1cc6e0;">FLICK</span>ORA</h2>
+                    <h2><a href="#home" class="logo-link"><span style="color: #1cc6e0;">FLICK</span>ORA</a></h2>
                     <p>Stream your favorite movies, anime, and series in HD.</p>
+                    <p>Support: <a href="mailto:support@flickora.stream" class="email-link">support@flickora.stream</a> | <a href="tel:+18005553542" class="phone-link">+1 (800) 555-FLICK</a></p>
                 </div>
                 <div class="footer-links">
                     <h4>Navigation</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="#home">Home</a></li>
                         <li><a href="#catalogue">Catalogue</a></li>
                         <li><a href="#vip">VIP Pass</a></li>
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Actions</h4>
+                    <h4>Help &amp; Actions</h4>
                     <ul>
                         <li><a href="javascript:window.print()">Print Catalogue</a></li>
+                        <li><a href="404.html">Status Page</a></li>
+                        <li><a href="tel:+18005553542" class="phone-link">Call Support</a></li>
+                        <li><a href="mailto:support@flickora.stream" class="email-link">Email Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Share</h4>
+                    <p>Invite friends to stream together.</p>
                     <button class="card-btn primary copy-link-btn" data-copy-url="https://flickora.stream" style="width: 100%;">
                         Share Flickora
                     </button>
@@ -583,69 +557,71 @@
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 FLICKORA. All rights reserved.</div>
-                <!-- 18. Last Updated Date in Footer -->
+                <div>&copy; <span class="copyright-year">2026</span> FLICKORA. All rights reserved.</div>
                 <div>Last Updated: <strong id="footer-last-updated">Today</strong></div>
             </div>
         </div>
     </footer>
 
-    <!-- 17. Confirmation Modals -->
-    <div id="confirmation-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" aria-hidden="true">
         <div class="modal-card">
             <div class="modal-header">
                 <h3 id="modal-title">Confirm Download</h3>
-                <button type="button" class="modal-close-btn modal-close-trigger">&times;</button>
+                <button type="button" class="modal-close-btn modal-close-trigger" aria-label="Close dialog">&times;</button>
             </div>
             <div class="modal-body" id="modal-desc">
                 Are you sure you want to download this title?
             </div>
             <div class="modal-actions">
                 <button type="button" class="btn-modal cancel modal-close-trigger">Cancel</button>
-                <button type="button" id="modal-confirm-btn" class="btn-modal confirm">Download</button>
+                <button type="button" id="modal-confirm-btn" class="btn-modal confirm">Confirm &amp; Download</button>
             </div>
         </div>
     </div>
 
-    <!-- 20. Floating Contact Button & Widget -->
-    <button id="floating-contact-btn" class="floating-contact-btn" aria-label="Contact support" title="Contact Us">
-        <span class="contact-status-dot"></span>
+    <!-- Floating Contact Button & Support Panel -->
+    <button id="floating-contact-btn" class="floating-contact-btn" aria-label="Open support contact chat" title="Chat with Flickora Support">
+        <span class="contact-status-dot" title="Live support online"></span>
         <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
     </button>
 
-    <div id="contact-widget-panel" class="contact-widget-panel">
+    <div id="contact-widget-panel" class="contact-widget-panel" role="region" aria-label="Quick Contact Support">
         <div class="contact-widget-header">
-            <h4>Support</h4>
-            <button type="button" id="close-contact-btn" class="modal-close-btn" style="color: #000;">&times;</button>
+            <h4>💬 Flickora Support</h4>
+            <button type="button" id="close-contact-btn" class="modal-close-btn" style="color: #000;" aria-label="Close contact">&times;</button>
         </div>
         <div class="contact-widget-body">
-            <p>Send a message or title request:</p>
+            <p>Send a message, feedback, or title request:</p>
             <form id="quick-contact-form" class="contact-widget-form">
-                <textarea placeholder="Type your message..." required></textarea>
-                <button type="submit" class="submit-btn" style="padding: 8px;">Send</button>
+                <textarea placeholder="Type your message, issue, or title request..." required></textarea>
+                <button type="submit" class="submit-btn" style="padding: 10px; font-size: 13px;">Send Instant Message</button>
             </form>
+            <div style="margin-top: 15px; font-size: 11px; color: #888; text-align: center;">
+                Call: <a href="tel:+18005553542" class="phone-link">+1 (800) 555-FLICK</a>
+            </div>
         </div>
     </div>
 
-    <!-- 4. Back to top button -->
-    <button id="back-to-top-btn" class="back-to-top-btn" aria-label="Back to top" title="Back to top">
+    <!-- Back to top button -->
+    <button id="back-to-top-btn" class="back-to-top-btn" aria-label="Scroll to top" title="Back to top">
         <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
     </button>
 
-    <!-- 2. Simple cookie banner -->
-    <div id="cookie-banner" class="cookie-banner">
+    <!-- Simple cookie banner -->
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
         <div class="cookie-banner-content">
-            <h4>Cookie Preferences</h4>
-            <p>We use cookies to save your settings and dark mode choice.</p>
+            <h4>Cookie &amp; Privacy Preferences</h4>
+            <p>We use cookies and local storage to save your streaming preferences and dark mode choice.</p>
         </div>
         <div class="cookie-banner-actions">
-            <button type="button" id="accept-cookies-btn" class="cookie-btn accept">Accept</button>
+            <button type="button" id="accept-cookies-btn" class="cookie-btn accept">Accept All</button>
             <button type="button" id="decline-cookies-btn" class="cookie-btn decline">Decline</button>
         </div>
     </div>
 
-    <!-- 9. Toast notification -->
-    <div id="toast-notification" class="toast-notification">
+    <!-- Toast notification -->
+    <div id="toast-notification" class="toast-notification" role="status" aria-live="polite">
         <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
         <span class="toast-msg">Link copied to clipboard!</span>
     </div>

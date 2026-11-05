@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1cc6e0"/>
+            <stop offset="100%" stop-color="#efbf04"/>
+        </linearGradient>
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+    </defs>
+    <!-- Background rounded squircle -->
+    <rect width="64" height="64" rx="16" fill="#07090e" stroke="#1cc6e0" stroke-width="2"/>
+    <!-- Stylized F with Play button symbol -->
+    <path d="M18 14h28c2.2 0 4 1.8 4 4v2c0 2.2-1.8 4-4 4H28v8h14c2.2 0 4 1.8 4 4v2c0 2.2-1.8 4-4 4H28v10c0 2.2-1.8 4-4 4h-2c-2.2 0-4-1.8-4-4V18c0-2.2 1.8-4 4-4z" fill="url(#grad)" filter="url(#glow)"/>
+    <!-- Glowing play accent -->
+    <polygon points="34,27 44,33 34,39" fill="#1cc6e0"/>
+</svg>
+

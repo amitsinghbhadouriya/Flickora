@@ -4,8 +4,15 @@
    ORIGINAL FLICKORA CORE STYLES (PRESERVED 100% INTACT)
    ========================================================================== */
 
+html,
 body {
     margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
     background-color: #000;
     color: #eee;
     font-family: Poppins, sans-serif;
@@ -96,7 +103,8 @@ nav a:hover {
 .carousel {
     height: 100vh;
     margin-top: -70px;
-    width: 100vw;
+    width: 100%;
+    max-width: 100%;
     overflow: hidden;
     position: relative;
 }
@@ -439,42 +447,115 @@ nav a:hover {
 @media screen and (max-width: 678px) {
     .carousel .list .item .content {
         padding-right: 0;
+        width: 100%;
+        max-width: 90%;
+        top: 12%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .carousel .list .item .content h1 {
-        font-size: 40px
+        text-wrap: wrap !important;
+        word-break: break-word;
+    }
+
+    .details {
+        text-wrap: wrap !important;
+        flex-wrap: wrap;
+        margin-bottom: 0;
     }
 
     .details p {
-        font-size: 17px;
+        font-size: 15px;
+        margin: 5px 0;
+        padding: 0 8px;
     }
 
     .content h4 {
         margin: 10px 0;
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .buttons {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .download-btn,
+    .trailer-btn,
+    .copy-btn {
+        width: 100px;
+        padding: 9px 0;
+        font-size: 12px;
     }
 
     .vid-box {
-        margin-top: 20px;
+        margin-top: 15px;
+        width: 100%;
+        max-width: 250px;
+        height: 120px;
     }
 
     nav {
-        display: none
     }
 
     header {
-        padding: 0 10px;
+        padding: 0 15px;
     }
 
     .content {
-        top: 10%;
+        top: 12%;
     }
 
     .thumbnail {
-        top: 75%;
+        left: 15px;
+        right: 15px;
+        bottom: 25px;
+        width: auto;
+        max-width: calc(100% - 30px);
+        overflow-x: auto;
+        border-radius: 20px;
+        padding: 8px 12px;
+        gap: 12px;
+        scrollbar-width: none;
+    }
+
+    .thumbnail::-webkit-scrollbar {
+        display: none;
+    }
+
+    .thumbnail .item {
+        width: 90px;
+        height: 130px;
     }
 
     .arrows {
-        left: 15%;
+        right: 20px;
+        left: auto;
+        top: auto;
+        bottom: 80px;
+        width: auto;
+        max-width: 120px;
+    }
+
+    .arrows button {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+
+    .search-box input {
+        width: 90px;
+        padding: 7px 10px;
+    }
+
+    .search-box input:focus {
+        width: 120px;
+    }
+
+    .search-clear-btn {
+        right: 48px;
     }
 }
 
@@ -522,7 +603,7 @@ body.light-mode .media-card {
     background: #ffffff;
     border-color: #e2e8f0;
     color: #111827;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
 }
 
 body.light-mode .card-desc,
@@ -663,7 +744,7 @@ body.light-mode .theme-toggle-btn .moon-icon {
 body.light-mode .search-results-dropdown {
     background: #ffffff;
     border-color: #cbd5e1;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .search-results-dropdown.active {
@@ -836,58 +917,7 @@ body.light-mode .mobile-drawer nav a {
 
 /* 6. LOADING ANIMATIONS: Page Loader */
 #page-loader {
-    position: fixed;
-    inset: 0;
-    background: #000;
-    z-index: 100005;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-#page-loader.loaded {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.loader-logo {
-    font-size: 34px;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: 1px;
-}
-
-.loader-logo span {
-    color: #1cc6e0;
-}
-
-.loader-bar {
-    width: 160px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
-}
-
-.loader-bar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(90deg, #1cc6e0, #efbf04);
-    animation: loaderMove 1.2s infinite;
-}
-
-@keyframes loaderMove {
-    0% { left: -50%; }
-    100% { left: 100%; }
+    display: none !important;
 }
 
 /* Button Loading Spinner */
@@ -908,7 +938,9 @@ body.light-mode .mobile-drawer nav a {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* 14. UTM TRACKING: Active Campaign Banner */
@@ -1301,8 +1333,8 @@ body.light-mode .form-group label {
     display: none;
 }
 
-.form-input.input-error + .form-error-msg,
-.form-control-wrap.has-error + .form-error-msg {
+.form-input.input-error+.form-error-msg,
+.form-control-wrap.has-error+.form-error-msg {
     display: block;
 }
 
@@ -1311,8 +1343,16 @@ body.light-mode .form-group label {
 }
 
 @keyframes shakeAnim {
-    20%, 60% { transform: translateX(-6px); }
-    40%, 80% { transform: translateX(6px); }
+
+    20%,
+    60% {
+        transform: translateX(-6px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(6px);
+    }
 }
 
 /* 13. Password Toggle Button */
@@ -1583,7 +1623,7 @@ body.light-mode .footer-links h4 {
 body.light-mode .modal-card {
     background: #ffffff;
     border-color: #cbd5e1;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .modal-header {
@@ -2012,4 +2052,51 @@ body.light-mode .toast-notification {
     .vip-intro h2 {
         font-size: 26px;
     }
+
+    input,
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+
+    .cookie-banner {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        max-width: none;
+    }
+
+    .contact-widget-panel {
+        left: 10px;
+        right: 10px;
+        bottom: 80px;
+        width: auto;
+    }
+}
+
+/* Links & Clickable Elements */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.logo-link:hover {
+    opacity: 0.9;
+}
+
+.phone-link,
+.email-link {
+    color: #1cc6e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+    word-break: break-all;
+}
+
+.phone-link:hover,
+.email-link:hover {
+    color: #efbf04;
+    text-decoration: underline;
 }
