@@ -934,3 +934,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Touch Gestures & Swipe Detection for Carousel */
 
 /** Module: Window Resize Layout Recalibration */
+
+/** Module: Search Cache & Session Memory */
