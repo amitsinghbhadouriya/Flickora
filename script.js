@@ -942,3 +942,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Active Navigation Item Intersection Observer */
 
 /** Module: Carousel Auto-Advance Pause on Hover */
+
+/** Module: Cookie Consent Storage Dismissal */
