@@ -928,3 +928,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: OS Theme Preference Listener */
 
 /** Module: Image Asset Preloading & Error Fallback */
+
+/** Module: Global Escape Key Overlay Dismissal */
