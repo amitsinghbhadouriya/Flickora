@@ -932,3 +932,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Global Escape Key Overlay Dismissal */
 
 /** Module: Touch Gestures & Swipe Detection for Carousel */
+
+/** Module: Window Resize Layout Recalibration */
