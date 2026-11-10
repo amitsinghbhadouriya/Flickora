@@ -910,3 +910,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Mobile Navigation Toggle Handler */
 
 /** Module: Password Visibility Toggle Handler */
+
+/** Module: UTM Parameter Extraction & Analytics */
