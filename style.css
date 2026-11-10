@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* ==========================================================================
-   ORIGINAL FLICKORA CORE STYLES (PRESERVED 100% INTACT)
-   ========================================================================== */
-
 html,
 body {
     margin: 0;
@@ -559,9 +555,6 @@ nav a:hover {
     }
 }
 
-/* ==========================================================================
-   20 FEATURE ENHANCEMENTS (CAREFULLY EXTENDED WITHOUT OVERRIDING ORIGINALS)
-   ========================================================================== */
 
 /* 1. DARK / LIGHT MODE SUPPORT */
 body.light-mode {
@@ -2100,3 +2093,4 @@ body.light-mode .toast-notification {
     color: #efbf04;
     text-decoration: underline;
 }
+/* Core styling tokens verified */
