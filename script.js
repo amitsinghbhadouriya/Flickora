@@ -922,3 +922,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Clipboard Copy Manager */
 
 /** Module: Copyright Year Auto-Updater */
+
+/** Module: Keyboard Navigation & Focus Trap */
