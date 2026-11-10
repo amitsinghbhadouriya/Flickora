@@ -894,3 +894,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Dark Mode Theme Persistence */
 
 /** Module: Interactive Video Modal Controller */
+
+/** Module: Media Slider and Carousel Navigation */
