@@ -936,3 +936,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Window Resize Layout Recalibration */
 
 /** Module: Search Cache & Session Memory */
+
+/** Module: History State Deep Linking for Modals */
