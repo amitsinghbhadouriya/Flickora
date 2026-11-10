@@ -902,3 +902,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Toast Notification Dispatcher */
 
 /** Module: Cookie Consent Management */
+
+/** Module: Contact Modal Interaction */
