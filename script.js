@@ -912,3 +912,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Password Visibility Toggle Handler */
 
 /** Module: UTM Parameter Extraction & Analytics */
+
+/** Module: Form Validation & Toast Feedback Controller */
