@@ -926,3 +926,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Keyboard Navigation & Focus Trap */
 
 /** Module: OS Theme Preference Listener */
+
+/** Module: Image Asset Preloading & Error Fallback */
