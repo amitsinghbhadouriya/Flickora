@@ -946,3 +946,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Cookie Consent Storage Dismissal */
 
 /** Module: Video Player State Persistence */
+
+/** Module: Flickora Core Bootstrap & Lifecycle Complete */
