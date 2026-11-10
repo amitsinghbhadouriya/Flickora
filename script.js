@@ -914,3 +914,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: UTM Parameter Extraction & Analytics */
 
 /** Module: Form Validation & Toast Feedback Controller */
+
+/** Module: Modal Dialog Event Handlers */
