@@ -904,3 +904,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Cookie Consent Management */
 
 /** Module: Contact Modal Interaction */
+
+/** Module: Smooth Scroll Back To Top Controller */
