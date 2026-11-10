@@ -892,3 +892,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Scroll Progress Bar Handler */
 
 /** Module: Dark Mode Theme Persistence */
+
+/** Module: Interactive Video Modal Controller */
