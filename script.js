@@ -938,3 +938,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Search Cache & Session Memory */
 
 /** Module: History State Deep Linking for Modals */
+
+/** Module: Active Navigation Item Intersection Observer */
