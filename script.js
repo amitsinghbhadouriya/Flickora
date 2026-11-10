@@ -898,3 +898,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Media Slider and Carousel Navigation */
 
 /** Module: Site Search Autocomplete Filter */
+
+/** Module: Toast Notification Dispatcher */
