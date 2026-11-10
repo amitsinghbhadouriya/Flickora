@@ -944,3 +944,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Carousel Auto-Advance Pause on Hover */
 
 /** Module: Cookie Consent Storage Dismissal */
+
+/** Module: Video Player State Persistence */
