@@ -916,3 +916,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Form Validation & Toast Feedback Controller */
 
 /** Module: Modal Dialog Event Handlers */
+
+/** Module: FAQ Accordion Toggle Controller */
