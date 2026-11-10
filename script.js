@@ -918,3 +918,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Modal Dialog Event Handlers */
 
 /** Module: FAQ Accordion Toggle Controller */
+
+/** Module: Clipboard Copy Manager */
