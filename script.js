@@ -900,3 +900,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Site Search Autocomplete Filter */
 
 /** Module: Toast Notification Dispatcher */
+
+/** Module: Cookie Consent Management */
