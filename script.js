@@ -930,3 +930,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Image Asset Preloading & Error Fallback */
 
 /** Module: Global Escape Key Overlay Dismissal */
+
+/** Module: Touch Gestures & Swipe Detection for Carousel */
