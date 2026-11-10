@@ -908,3 +908,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Smooth Scroll Back To Top Controller */
 
 /** Module: Mobile Navigation Toggle Handler */
+
+/** Module: Password Visibility Toggle Handler */
