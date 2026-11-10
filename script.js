@@ -896,3 +896,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Interactive Video Modal Controller */
 
 /** Module: Media Slider and Carousel Navigation */
+
+/** Module: Site Search Autocomplete Filter */
