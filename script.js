@@ -887,3 +887,5 @@ document.addEventListener('DOMContentLoaded', () => {
             return div.innerHTML;
         }
     });
+
+// Global event listeners initialized
