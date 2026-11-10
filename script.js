@@ -924,3 +924,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Copyright Year Auto-Updater */
 
 /** Module: Keyboard Navigation & Focus Trap */
+
+/** Module: OS Theme Preference Listener */
