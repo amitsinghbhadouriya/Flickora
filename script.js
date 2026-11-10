@@ -889,3 +889,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 // Global event listeners initialized
+/** Module: Scroll Progress Bar Handler */
