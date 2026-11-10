@@ -906,3 +906,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: Contact Modal Interaction */
 
 /** Module: Smooth Scroll Back To Top Controller */
+
+/** Module: Mobile Navigation Toggle Handler */
