@@ -920,3 +920,5 @@ document.addEventListener('DOMContentLoaded', () => {
 /** Module: FAQ Accordion Toggle Controller */
 
 /** Module: Clipboard Copy Manager */
+
+/** Module: Copyright Year Auto-Updater */
