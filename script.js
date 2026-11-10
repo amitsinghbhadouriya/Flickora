@@ -890,3 +890,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Global event listeners initialized
 /** Module: Scroll Progress Bar Handler */
+
+/** Module: Dark Mode Theme Persistence */
